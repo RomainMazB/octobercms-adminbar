@@ -168,6 +168,7 @@ will render something like:
 ```
 This will perfectly generate a double-level menu/sub-menu:
 
+![Sub-sub-menus](https://raw.githubusercontent.com/RomainMazB/octobercms-adminbar/master/git-images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-05-22%2001-15-48.png)
 
 ### The author's talks
 I've first developed this plugin when I needed a front end top bar to create dynamic backend shortcut for a custom plugin's models,
@@ -176,7 +177,9 @@ so I've separated it, and make it the more easy-to-use and generic I've could.
 
 This plugin could perfectly fit for every OctoberCMS plugin which needs it. Don't lose your
 time to create a custom top bar just for your plugin: if all of us do that, the OctoberCMS
-based websites will look in near future like a 2000's browser with a dozen of toolbars.
+based websites will look in near future like a 2000's browser with a dozen of toolbars:
+
+![Browser's toolbar madness](https://github.com/RomainMazB/octobercms-adminbar/blob/master/git-images/toolbar_madness.jpg?raw=true)
 
 If you need some personalized help, or have an idea to reach a level higher for this plugin, feel free to contact me
 , make a pull request or just submit your idea in an issue, and I will review it.
