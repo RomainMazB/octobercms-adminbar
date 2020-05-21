@@ -1,4 +1,4 @@
-#OctoberCMS AdminBar Plugin
+# OctoberCMS AdminBar Plugin
 
 This plugin is a plugin base for others marketplace plugin.
 
@@ -9,8 +9,8 @@ easily insert links, ajax links, and raw html into the AdminBar.
 
 The AdminBar handle infinite submenus!
 
-###How to use:
-#####Add the plugin dependency
+### How to use:
+##### Add the plugin dependency
 First, be sure to [add this plugin as a dependency](https://octobercms.com/docs/plugin/registration#dependency-definitions) of yours:
 ```php
 namespace Acme\Blog;
@@ -25,7 +25,7 @@ class Plugin extends \System\Classes\PluginBase
     [...]
 }
 ```
-#####Register into the plugin event
+##### Register into the plugin event
 Then, all you have to do, is to register into the `romainmazb.adminbar.init` event
 which provides the `$adminBar` component and its `$items`:
 ```php
@@ -46,9 +46,9 @@ public function boot()
 To add one or multiple item(s), you can directly add it to `$items`, which is passed by reference
 or use the `$adminBar->addItems()` method.
 
-###Commons examples:
+### Commons examples:
 For now, the plugin support this types of items: basic links, ajax links, raw html and submenu
-#####Basic link:
+##### Basic link:
 ```php
     $link = [
         'type' => 'link', // Optional for basic links
@@ -61,7 +61,7 @@ will render something like:
 ```html
 <a href="http://example.test/backend" title="Go to the dashboard">Dashboard</a>
 ```
-#####Ajax link:
+##### Ajax link:
 ```php
     $admin_url = config('app.url') . '/' . config('cms.backendUri');
     $link = [
@@ -93,7 +93,7 @@ will render something like:
     </a>
 </form>
 ```
-#####Raw HTML:
+##### Raw HTML:
 ```php
     $link = [
         'type' => 'raw',
@@ -105,7 +105,7 @@ will render something like:
 <span style="color: red">A red text</span>
 ```
 
-#####Submenu creation:
+##### Submenu creation:
 The plugin support infinite submenus, you can add a main menu for your plugin
 where you insert all your needed links:
 ```php
@@ -183,4 +183,4 @@ If you need some personalized help, or have an idea to reach a level higher for 
 
 And if you want to show me your gratitude to saved your precious time, you can [buy me a ko-fi](https://ko-fi.com/romainmazb)
 
-###Have fun with OctoberCMS!
+### Have fun with OctoberCMS!
