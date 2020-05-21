@@ -1,0 +1,8 @@
+<a href="#" aria-haspopup="true">{{ submenu.text }}</a>
+<ul class="dropdown" aria-label="submenu">
+    {% for item in submenu.items %}
+    <li class="nested">
+        {% partial '@item.htm' item=item %}
+    </li>
+    {% endfor %}
+</ul>

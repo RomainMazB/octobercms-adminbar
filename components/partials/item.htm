@@ -1,0 +1,9 @@
+{% if item.type is null or item.type is same as('link') %}
+    {% partial '@link.htm' link=item %}
+{% elseif item.type is same as('submenu') %}
+    {% partial '@submenu.htm' submenu=item %}
+{% elseif item.type is same as('ajaxLink') %}
+    {% partial '@ajax-link.htm' link=item %}
+{% elseif item.type is same as('raw') %}
+    {{ item.content|raw }}
+{% endif %}

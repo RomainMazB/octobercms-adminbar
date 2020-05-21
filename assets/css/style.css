@@ -1,0 +1,66 @@
+#adminBar {
+    z-index: 999;
+    background: rgba(0,0,0,.8);
+}
+
+#adminBar ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+#adminBar li {
+    color: #ccc;
+    display: block;
+    float: left;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+#adminBar li a {
+    display: block;
+    padding: .5rem;
+    color: #ccc;
+    transition: all 0.5s ease;
+}
+
+#adminBar li:hover,
+li:focus-within {
+    background: rgb(0,0,0);
+    cursor: pointer;
+}
+
+#adminBar li:focus-within a {
+    outline: none;
+}
+
+#adminBar .nested ul {
+    margin-left:100%;
+    top:0;
+}
+
+#adminBar ul li ul {
+    background: rgba(0,0,0,.8);
+    visibility: hidden;
+    opacity: 0;
+    min-width: 7rem;
+    position: absolute;
+    left:0;
+    right:0;
+    display: none;
+}
+
+#adminBar ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+#adminBar ul li ul li {
+    clear: both;
+    width: 100%;
+}

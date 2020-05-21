@@ -1,0 +1,16 @@
+{% if __SELF__.loggedIn %}
+<nav id="adminBar" role="navigation">
+    <ul>
+        {% if __SELF__.display_dashboard_link %}
+        <li>
+            <a href="{{ config('cms.backendUri')|app }}">{{ trans('backend::lang.dashboard.menu_label') }}</a>
+        </li>
+        {% endif %}
+        {% for item in __SELF__.items %}
+        <li>
+            {% partial '@item.htm' item=item %}
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}

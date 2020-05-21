@@ -1,0 +1,10 @@
+{{ form_ajax(link.form_action) }}
+<a role="menuitem" tabindex="-1" href="{{ link.url ?? '#' }}"
+   title="{{ link.title }}"
+   {% for name, value in link.datas %}
+   data-{{ name }}="{{ value }}"
+   {% endfor %}
+>
+    {{ link.text }}
+</a>
+{{ form_close() }}

@@ -1,0 +1,6 @@
+fields:
+    display_dashboard_link:
+        type: switch
+        label: Dashboard link
+        default: true
+        comment: Display the dashboard link

@@ -1,0 +1,6 @@
+plugin:
+    name: romainmazb.adminbar::lang.plugin.name
+    description: romainmazb.adminbar::lang.plugin.description
+    author: Romain ''Maz'' BILLOIR
+    icon: icon-tachometer
+    homepage: 'https://www.octobercms.fr'
