@@ -46,6 +46,12 @@ public function boot()
 To add one or multiple item(s), you can directly add it to `$items`, which is passed by reference
 or use the `$adminBar->addItems()` method.
 
+### Add the adminBar component to layout
+```html
+[adminBar]
+==
+{% component 'adminBar' %}
+```
 ### Commons examples:
 For now, the plugin support this types of items: basic links, ajax links, raw html and submenu
 ##### Basic link:
