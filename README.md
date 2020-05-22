@@ -152,24 +152,24 @@ will render something like:
 ```html
 <a href="#" aria-haspopup="true">My awesome plugin</a>
 <ul class="dropdown" aria-label="submenu">
-        <li class="nested">
-            <span style="color: red">A red sub-item</span>
+    <li class="nested">
+        <span style="color: red">A red sub-item</span>
     </li>
-        <li class="nested">
-            <a href="#" aria-haspopup="true">Digging deeper</a>
-<ul class="dropdown" aria-label="submenu">
-        <li class="nested">
-            <span style="color: blue">A blue sub-sub-item</span>
+    <li class="nested">
+        <a href="#" aria-haspopup="true">Digging deeper</a>
+        <ul class="dropdown" aria-label="submenu">
+            <li class="nested">
+                <span style="color: blue">A blue sub-sub-item</span>
+            </li>
+            <li class="nested">
+                <span style="color: green">A green sub-sub-item</span>
+            </li>
+        </ul>
     </li>
-        <li class="nested">
-            <span style="color: green">A green sub-sub-item</span>
+    <li class="nested">
+        <a href="https://ko-fi.com/romainmazb" title="You can buy me a ko-fi">Buy me a ko-fi</a>
     </li>
-    </ul>
-    </li>
-        <li class="nested">
-            <a href="https://ko-fi.com/romainmazb" title="You can buy me a ko-fi">Buy me a ko-fi</a>
-    </li>
-    </ul>
+</ul>
 
 ```
 This will perfectly generate a double-level menu/sub-menu:
