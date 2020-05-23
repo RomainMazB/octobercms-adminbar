@@ -47,6 +47,7 @@ li:focus-within {
     position: absolute;
     display: none;
     white-space: nowrap;
+    min-width: 100%;
 }
 
 #adminBar ul li:hover > ul,
