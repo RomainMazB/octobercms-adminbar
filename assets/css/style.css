@@ -44,11 +44,9 @@ li:focus-within {
     background: rgba(0,0,0,.8);
     visibility: hidden;
     opacity: 0;
-    min-width: 7rem;
     position: absolute;
-    left:0;
-    right:0;
     display: none;
+    white-space: nowrap;
 }
 
 #adminBar ul li:hover > ul,
