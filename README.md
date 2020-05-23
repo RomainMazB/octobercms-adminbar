@@ -7,7 +7,7 @@ Alone, it will only display a Dashboard link in the front end of the website.
 But adding this plugin as a dependency for your plugin, and you will be able to
 easily insert links, ajax links, and raw html into the AdminBar.
 
-The AdminBar handle infinite submenus!
+The AdminBar handle infinite submenus and each list item and link is customizable.
 
 ### How to use:
 ##### Add the plugin dependency
@@ -175,6 +175,31 @@ will render something like:
 This will perfectly generate a double-level menu/sub-menu:
 
 ![Sub-sub-menus](https://raw.githubusercontent.com/RomainMazB/octobercms-adminbar/master/git-images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-05-22%2001-15-48.png)
+
+### Customization
+For each list item, whatever the type of item which is contained into, you can style is or declare some css class.
+To do so, respectively use `liStyle` and `liCssClass` parameters:
+```php
+    $link = [
+        'type' => 'link', // Optional for basic links
+        'text' => 'Dashboard',
+        'url' => config('app.url') . '/' . config('cms.backendUri'),
+        'title' => 'Go to the dashboard',
+        'liCssClass' => 'primary is-large',
+        'liStyle' => 'width: 300px; background-color: red;'
+    ];
+```
+You can also customize the link itself with `style` and `cssClass` parameters:
+```php
+    $link = [
+        'type' => 'link', // Optional for basic links
+        'text' => 'Dashboard',
+        'url' => config('app.url') . '/' . config('cms.backendUri'),
+        'title' => 'Go to the dashboard',
+        'cssClass' => 'text-red bold',
+        'liStyle' => 'letter-spacing: .2rem; font-style: underline;'
+    ];
+```
 
 ### The author's talks
 I've first developed this plugin when I needed a front end top bar to create dynamic backend shortcut for a custom plugin's models,
