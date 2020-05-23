@@ -49,8 +49,16 @@ public function boot()
     });
 }
 ```
-To add one or multiple item(s), you can directly add it to `$items`, which is passed by reference
-or use the `$adminBar->addItems()` method.
+
+`$items` is passed by reference, so you can directly modify it if needed to add, remove or reorganize items:
+```php
+Event::listen('romainmazb.adminbar.init', function ($adminBar, &$items) {
+    $items[] = [
+        'text' => 'Create a blog post',
+        'url' => 'https://www.example.com'
+    ];
+});
+```
 
 ### Add the adminBar component to layout
 ```html
