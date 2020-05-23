@@ -7,7 +7,7 @@
         </li>
         {% endif %}
         {% for item in __SELF__.items %}
-        <li>
+        <li class="{{ item.liCssClass }}" style="{{ item.liStyle }}">
             {% partial '@item.htm' item=item %}
         </li>
         {% endfor %}
