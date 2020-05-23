@@ -1,7 +1,13 @@
-<a href="#" aria-haspopup="true" title="{{ submenu.title }} >{{ submenu.text }}</a>
+<a href="#" aria-haspopup="true"
+   title="{{ submenu.title }}"
+   class="{{ submenu.cssClass }}"
+   style="{{ submenu.style }}"
+>
+    {{ submenu.text }}
+</a>
 <ul class="dropdown" aria-label="submenu">
     {% for item in submenu.items %}
-    <li class="nested">
+    <li class="nested {{ item.liCssClass }}" style="{{ item.liStyle }}">
         {% partial '@item.htm' item=item %}
     </li>
     {% endfor %}
