@@ -4,6 +4,8 @@
    {% for name, value in link.datas %}
    data-{{ name }}="{{ value }}"
    {% endfor %}
+   class="{{ link.cssClass }}"
+   style="{{ link.style" }}"
 >
     {{ link.text }}
 </a>
