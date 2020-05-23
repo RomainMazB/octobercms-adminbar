@@ -1,9 +1,7 @@
 <?php namespace RomainMazB\AdminBar\Components;
 
 use Backend\Facades\BackendAuth;
-use RomainMazB\AdminBar\Classes\Singleton;
 use Event;
-use RomainMazB\AdminBar\Models\Settings;
 
 class AdminBar extends \Cms\Classes\ComponentBase
 {
@@ -13,24 +11,47 @@ class AdminBar extends \Cms\Classes\ComponentBase
 
     public $display_dashboard_link;
 
+    public $auth;
+
     public function init()
     {
         if (! BackendAuth::check()) {
             return;
         }
 
-        $this->loggedIn = true;
+        $user = BackendAuth::getUser();
+        $this->auth = [
+            'full_name' => $user->full_name,
+            'thumb' => $user->getAvatarThumb()
+        ];
         $this->addCss('/plugins/romainmazb/adminbar/assets/css/style.css');
 
         Event::fire('romainmazb.adminbar.init', [&$this, &$this->items]);
-        $this->display_dashboard_link = Settings::get('display_dashboard_link', true);
     }
 
     public function componentDetails()
     {
         return [
-            'name' => 'Admin Bar',
-            'description' => 'Displays a admin-only navigation bar on front-end',
+            'name' => trans('romainmazb.adminbar::lang.plugin.name'),
+            'description' => trans('romainmazb.adminbar::lang.plugin.description'),
+        ];
+    }
+
+    public function defineProperties()
+    {
+        return [
+            'display_dashboard_link' => [
+                'title'             => trans('romainmazb.adminbar::lang.properties.titles.display_dashboard_link'),
+                'description'       => trans('romainmazb.adminbar::lang.properties.descriptions.display_dashboard_link'),
+                'default'           => true,
+                'type'              => 'checkbox'
+            ],
+            'display_auth_links' => [
+                'title'             => trans('romainmazb.adminbar::lang.properties.titles.display_auth_links'),
+                'description'       => trans('romainmazb.adminbar::lang.properties.descriptions.display_auth_links'),
+                'default'           => true,
+                'type'              => 'checkbox'
+            ],
         ];
     }
 

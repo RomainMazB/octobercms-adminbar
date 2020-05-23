@@ -1,6 +1,8 @@
 #adminBar {
     z-index: 999;
     background: rgba(0,0,0,.8);
+    display: flex;
+    justify-content: space-between;
 }
 
 #adminBar ul {
@@ -44,11 +46,10 @@ li:focus-within {
     background: rgba(0,0,0,.8);
     visibility: hidden;
     opacity: 0;
-    min-width: 7rem;
     position: absolute;
-    left:0;
-    right:0;
     display: none;
+    white-space: nowrap;
+    min-width: 100%;
 }
 
 #adminBar ul li:hover > ul,
@@ -63,4 +64,12 @@ ul li ul:focus {
 #adminBar ul li ul li {
     clear: both;
     width: 100%;
+}
+
+#adminBar #auth_avatar {
+    display: inline-block;
+}
+
+#adminBar #auth_submenu {
+    right: 0;
 }

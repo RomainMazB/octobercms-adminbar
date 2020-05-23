@@ -191,6 +191,7 @@ This will perfectly generate a double-level menu/sub-menu:
 ![Sub-sub-menus](https://raw.githubusercontent.com/RomainMazB/octobercms-adminbar/master/git-images/Capture%20d%E2%80%99%C3%A9cran%20de%202020-05-22%2001-15-48.png)
 
 ### Customization
+#### Styles CSS Class for list items and link
 For each list item, whatever the type of item which is contained into, you can style is or declare some css class.
 To do so, respectively use `liStyle` and `liCssClass` parameters:
 ```php
@@ -213,6 +214,18 @@ You can also customize the link itself with `style` and `cssClass` parameters:
         'cssClass' => 'text-red bold',
         'liStyle' => 'letter-spacing: .2rem; font-style: underline;'
     ];
+```
+
+#### Dashboard and back-end auth links
+The component gives you the ability with his property to display or hide:
+ - A dashboard link before all other links
+ - The back-end auth shortcuts: Account, Backend preferences and Sign out
+
+ To modify this behavior (displayed by default), just modify the component property with the CMS Layout manager or directly in your layout:
+ ```js
+ [adminBar]
+ display_dashboard_link = false
+ display_auth_links = false
 ```
 
 ### The author's talks
