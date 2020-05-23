@@ -34,12 +34,18 @@ public function boot()
 {
     // Add a basic shortcut, not really usefull
     Event::listen('romainmazb.adminbar.init', function ($adminBar, $items) {
-        $link = [
-            'text' => 'Create a blog post',
-            'url' => 'https://www.example.com'
+        $links = [
+            [
+                'text' => 'Create a blog post',
+                'url' => 'https://www.example.com'
+            ],
+            [
+                'text' => 'Create a blog category',
+                'url' => 'https://www.example.com'
+            ]
         ];
 
-        $adminBar->addItems($link);
+        $adminBar->addItems($links);
     });
 }
 ```
