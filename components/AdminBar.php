@@ -36,6 +36,6 @@ class AdminBar extends \Cms\Classes\ComponentBase
 
     public function addItems($items)
     {
-        array_push($this->items, $items);
+        $this->items = array_merge($this->items, $items);
     }
 }
