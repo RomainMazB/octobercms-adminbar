@@ -3,3 +3,4 @@
 1.0.3:
     - Add the right auth menu
     - Add display customization (on/off) of Dashboard link and Auth menu
+1.0.4: Fix/Avoid Twig Extension dependancy, thanks to m49n
