@@ -1,7 +1,7 @@
-{% if __SELF__.loggedIn %}
+{% if __SELF__.auth %}
 <nav id="adminBar" role="navigation">
     <ul>
-        {% if __SELF__.display_dashboard_link %}
+        {% if __SELF__.property('display_dashboard_link') %}
         <li>
             <a href="{{ config('cms.backendUri')|app }}">{{ trans('backend::lang.dashboard.menu_label') }}</a>
         </li>
@@ -12,5 +12,25 @@
         </li>
         {% endfor %}
     </ul>
+    {% if __SELF__.property('display_auth_links') %}
+    <ul>
+        <li>
+            <a href="#" aria-haspopup="true" title="{{ trans('backend::lang.account.signed_in_as', {'full_name': __SELF__.auth.full_name}) }}">
+                <img src="{{ __SELF__.auth.thumb }}" id="auth_avatar"> {{ __SELF__.auth.full_name }}
+            </a>
+            <ul id="auth_submenu" class="dropdown" aria-label="submenu">
+                <li class="nested">
+                    <a href="{{ config('cms.backendUri')|app }}/backend/users/myaccount">{{ trans('backend::lang.myaccount.menu_label') }}</a>
+                </li>
+                <li class="nested">
+                    <a href="{{ config('cms.backendUri')|app }}/backend/preferences">{{ trans('backend::lang.backend_preferences.menu_label') }}</a>
+                </li>
+                <li class="nested">
+                    <a href="{{ config('cms.backendUri')|app }}/backend/auth/signout">{{ trans('backend::lang.account.sign_out') }}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    {% endif %}
 </nav>
 {% endif %}
