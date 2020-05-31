@@ -2,6 +2,7 @@
 
 use Backend\Facades\BackendAuth;
 use Event;
+use Backend;
 
 class AdminBar extends \Cms\Classes\ComponentBase
 {
@@ -12,6 +13,8 @@ class AdminBar extends \Cms\Classes\ComponentBase
     public $display_dashboard_link;
 
     public $auth;
+
+    public $backend_uri;
 
     public function init()
     {
@@ -24,6 +27,8 @@ class AdminBar extends \Cms\Classes\ComponentBase
             'full_name' => $user->full_name,
             'thumb' => $user->getAvatarThumb()
         ];
+
+        $this->backend_uri = Backend::url('/');
         $this->addCss('/plugins/romainmazb/adminbar/assets/css/style.css');
 
         Event::fire('romainmazb.adminbar.init', [&$this, &$this->items]);
